@@ -9,4 +9,11 @@ const client = new Client({
 
 client.connect();
 
-client.query('call update_leads();');
+client.query('call update_leads();', (err, res) => {
+    if (err) throw err;
+    for (let row of res.rows) {
+      console.log(JSON.stringify(row));
+    }
+    console.log('cutting connection');
+    client.end();
+});
