@@ -1,0 +1,23 @@
+{
+  "name": "pgweb",
+  "version": "1.0.0",
+  "description": "Web-based PostgreSQL database browser written in Go.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JesseDavid/pgweb.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JesseDavid/pgweb/issues"
+  },
+  "homepage": "https://github.com/JesseDavid/pgweb#readme",
+  "dependencies": {
+    "pg": "^8.5.1"
+  }
+}
