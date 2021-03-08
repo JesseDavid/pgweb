@@ -1,0 +1,98 @@
+{
+  "mappings": [
+    {
+      "object_name": "Account",
+      "config": {
+        "access": "read_write",
+        "sf_notify_enabled": true,
+        "sf_polling_seconds": 600,
+        "sf_max_daily_api_calls": 30000,
+        "fields": {
+          "LastName": {},
+          "NumberOfEmployees": {},
+          "Name": {},
+          "Open_Opptys__c": {},
+          "IsDeleted": {},
+          "SystemModstamp": {},
+          "External_ID__c": {},
+          "CreatedDate": {},
+          "AccountNumber": {},
+          "Id": {},
+          "FirstName": {},
+          "AnnualRevenue": {},
+          "AM_X90_Day_Sales_Trend__c": {}
+        },
+        "indexes": {
+          "SystemModstamp": {
+            "unique": false
+          },
+          "External_ID__c": {
+            "unique": true
+          },
+          "Id": {
+            "unique": true
+          }
+        },
+        "upsert_field": "External_ID__c"
+      }
+    },
+    {
+      "object_name": "Lead",
+      "config": {
+        "access": "read_write",
+        "sf_notify_enabled": true,
+        "sf_polling_seconds": 600,
+        "sf_max_daily_api_calls": 30000,
+        "fields": {
+          "PartnerAccountId": {},
+          "LastName": {},
+          "Lead_Score_Value__c": {},
+          "DoNotCall": {},
+          "LastViewedDate": {},
+          "City": {},
+          "Name": {},
+          "Indicator_1_Positive__c": {},
+          "IsDeleted": {},
+          "SystemModstamp": {},
+          "External_ID__c": {},
+          "CreatedDate": {},
+          "ConvertedAccountId": {},
+          "PostalCode": {},
+          "Has_Budget__c": {},
+          "Id": {},
+          "FirstName": {},
+          "CleanStatus": {},
+          "Company": {},
+          "Rating": {}
+        },
+        "indexes": {
+          "SystemModstamp": {
+            "unique": false
+          },
+          "External_ID__c": {
+            "unique": true
+          },
+          "Id": {
+            "unique": true
+          }
+        },
+        "upsert_field": "External_ID__c"
+      }
+    }
+  ],
+  "connection": {
+    "app_name": "jd-lead-scoring",
+    "organization_id": "00D5Y000001ceyjUAA",
+    "exported_at": "2021-03-08T15:29:17.045228+00:00",
+    "features": {
+      "disable_bulk_writes": false,
+      "poll_db_no_merge": true,
+      "poll_external_ids": false,
+      "rest_count_only": false
+    },
+    "api_version": "51.0",
+    "name": "",
+    "logplex_log_enabled": false
+  },
+  "version": 1
+}

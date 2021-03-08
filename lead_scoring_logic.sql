@@ -1,8 +1,8 @@
 CREATE OR REPLACE FUNCTION set_lead_score(
-    current_rating NUMERIC,
+    current_rating DOUBLE precision,
     has_budget BOOLEAN,
-    rating TEXT,
-    city TEXT) 
+    rating character varying,
+    city character varying) 
 RETURNS NUMERIC AS $$
 DECLARE newScore NUMERIC;
 BEGIN
@@ -26,11 +26,18 @@ BEGIN
       newScore := newScore - 2;
     END IF;  
     
+    IF newScore > 100 THEN
+      newScore := 100;
+    ELSIF newScore < 0 THEN
+      newScore := 0;
+    END IF;
+      
     
     RETURN newScore;
 END; $$
 
 LANGUAGE plpgsql;
+
 
 create or replace procedure update_leads()
 language plpgsql    
@@ -38,7 +45,7 @@ as $$
 begin
    UPDATE salesforce.lead
     SET lead_score_value__c = set_lead_score( lead_score_value__c, has_budget__c, rating, city )
-    WHERE  lastname LIKE 'T%';
+    WHERE  lastname LIKE 'C%';
 
     commit;
 end;$$
